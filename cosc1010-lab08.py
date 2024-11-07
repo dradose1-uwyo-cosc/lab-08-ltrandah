@@ -1,23 +1,50 @@
-# Your Name Here
+# Lily Trandahl
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section:
+# 11/07/2024
+# Lab 08
+# Lab Section: 13
 # Sources, people worked with, help given to:
 # your
 # comments
 # here
-
 
 # Write a function that will properly check strings to see if they are an int or float, and convert them if so
 # If they can't be converted return false
 # Other wise return the converted int or float 
 # Floats should only have one decimal point in them 
 
+def convert(value):
+    try: 
+        return int(value)
+    except ValueError:
+        pass
+    try: 
+        result = float(value)
+        return round(result, 1)
+    except ValueError: 
+        pass
+    return False
 
 print("*" * 75)
 
-
+def point_slope(m, b, low_x, up_x):
+    points = []
+    for x in range (low_x, up_x + 1):
+        y = m * x + b
+        points.append(x, y)
+    y_val = []
+    
+    for x in range (low_x, up_x + 1):
+        y = m * x + b
+        y_val.append(y)
+    return y_val
+    
+    low_x = int(low_x)
+    up_x = int(up_x)
+    if low_x > up_x:
+        print(f"INVALID: The lower bound is greater than the upper bound.")
+        return False
+    
 # Point-slope y = mx + b
 # This is used in mathematics to determine what the value y would be for any given x
 # Where b is the y-intercept, where the line crosses the y-axis (x = 0)
